@@ -26,14 +26,13 @@ void draw_montain_line(float y) {
   fill(  color(228, 0.79, 1.0- 0.8 * y/height));
 
   beginShape();
-  vertex(0, 0);
+  vertex(0, 50);
   int step = 1;
   for (int x = 0; x < width - step ; x+=step ) {
     float y_noise = 260* pow( noise(0.01* x, 0.02* y, seed), 1.2);
     vertex(x, - y_noise);
   }
-  vertex( width, 0);
-  vertex( width, 0);
+  vertex( width, 50);
   endShape(CLOSE);
 
 }
