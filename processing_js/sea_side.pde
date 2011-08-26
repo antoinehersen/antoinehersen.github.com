@@ -37,27 +37,6 @@ void draw_montain_line(float y) {
 
 }
 
-void draw_montain_curve() {
-  fill(rock_color);
-  pushMatrix();
-  translate(0, 500);
-  beginShape();
-  curveVertex(0, 0);
-  curveVertex(0, 0);
-  int step = 2;
-  for (int x = 10; x < width - step ; x+=step ) {
-    float y_noise = 160* noise(0.01* x + seed);
-    println(y_noise);
-    curveVertex(x, - y_noise);
-  }
-  curveVertex( width-10, 0);
-  curveVertex( width-10, 0);
-  endShape();
-  popMatrix();
-  seed += 0.001;
-  println( "narf" + seed );
-}
-
 void draw() {
   background( background_color);
   pushMatrix();
@@ -67,7 +46,7 @@ void draw() {
     draw_montain_line(y);
   }
   popMatrix();
-  seed += 0.001;
+  seed += 0.01;
 
 }
 
